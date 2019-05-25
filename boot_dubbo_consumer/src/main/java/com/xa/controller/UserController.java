@@ -1,6 +1,6 @@
 package com.xa.controller;
 
-import com.xa.pojo.Users;
+import com.xa.pojo.User;
 import com.xa.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ public class UserController {
     private IUserService iUserService;
 
     @GetMapping("/User")
-    public List<Users> getAllUser(){
+    public List<User> getAllUser(){
 
         return iUserService.getAllUser();
     }

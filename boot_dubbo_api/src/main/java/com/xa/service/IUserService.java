@@ -1,9 +1,9 @@
 package com.xa.service;
 
-import com.xa.pojo.Users;
+import com.xa.pojo.User;
 
 import java.util.List;
 
 public interface IUserService {
-    List<Users> getAllUser();
+    List<User> getAllUser();
 }
