@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/mycrm
+    username: root
+    password: 666666
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.xa.pojo
