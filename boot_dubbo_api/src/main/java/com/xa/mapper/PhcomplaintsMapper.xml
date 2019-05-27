@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xa.mapper.PhcomplaintsMapper" >
+  <resultMap id="BaseResultMap" type="com.xa.pojo.Phcomplaints" >
+    <id column="cid" property="cid" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="ctype" property="ctype" jdbcType="VARCHAR" />
+    <result column="ctheme" property="ctheme" jdbcType="VARCHAR" />
+    <result column="ccontent" property="ccontent" jdbcType="VARCHAR" />
+    <result column="cemail" property="cemail" jdbcType="VARCHAR" />
+    <result column="cphone" property="cphone" jdbcType="VARCHAR" />
+    <result column="redundancyone" property="redundancyone" jdbcType="VARCHAR" />
+    <result column="redundancytwo" property="redundancytwo" jdbcType="VARCHAR" />
+    <result column="redundancythr" property="redundancythr" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    cid, uid, ctype, ctheme, ccontent, cemail, cphone, redundancyone, redundancytwo, 
+    redundancythr, status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xa.pojo.PhcomplaintsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from phcomplaints
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from phcomplaints
+    where cid = #{cid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from phcomplaints
+    where cid = #{cid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xa.pojo.PhcomplaintsExample" >
+    delete from phcomplaints
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xa.pojo.Phcomplaints" >
+    insert into phcomplaints (cid, uid, ctype, 
+      ctheme, ccontent, cemail, 
+      cphone, redundancyone, redundancytwo, 
+      redundancythr, status)
+    values (#{cid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{ctype,jdbcType=VARCHAR}, 
+      #{ctheme,jdbcType=VARCHAR}, #{ccontent,jdbcType=VARCHAR}, #{cemail,jdbcType=VARCHAR}, 
+      #{cphone,jdbcType=VARCHAR}, #{redundancyone,jdbcType=VARCHAR}, #{redundancytwo,jdbcType=VARCHAR}, 
+      #{redundancythr,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xa.pojo.Phcomplaints" >
+    insert into phcomplaints
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="ctype != null" >
+        ctype,
+      </if>
+      <if test="ctheme != null" >
+        ctheme,
+      </if>
+      <if test="ccontent != null" >
+        ccontent,
+      </if>
+      <if test="cemail != null" >
+        cemail,
+      </if>
+      <if test="cphone != null" >
+        cphone,
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone,
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo,
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="ctype != null" >
+        #{ctype,jdbcType=VARCHAR},
+      </if>
+      <if test="ctheme != null" >
+        #{ctheme,jdbcType=VARCHAR},
+      </if>
+      <if test="ccontent != null" >
+        #{ccontent,jdbcType=VARCHAR},
+      </if>
+      <if test="cemail != null" >
+        #{cemail,jdbcType=VARCHAR},
+      </if>
+      <if test="cphone != null" >
+        #{cphone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xa.pojo.PhcomplaintsExample" resultType="java.lang.Integer" >
+    select count(*) from phcomplaints
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update phcomplaints
+    <set >
+      <if test="record.cid != null" >
+        cid = #{record.cid,jdbcType=INTEGER},
+      </if>
+      <if test="record.uid != null" >
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.ctype != null" >
+        ctype = #{record.ctype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ctheme != null" >
+        ctheme = #{record.ctheme,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ccontent != null" >
+        ccontent = #{record.ccontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cemail != null" >
+        cemail = #{record.cemail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cphone != null" >
+        cphone = #{record.cphone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancyone != null" >
+        redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancytwo != null" >
+        redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancythr != null" >
+        redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update phcomplaints
+    set cid = #{record.cid,jdbcType=INTEGER},
+      uid = #{record.uid,jdbcType=INTEGER},
+      ctype = #{record.ctype,jdbcType=VARCHAR},
+      ctheme = #{record.ctheme,jdbcType=VARCHAR},
+      ccontent = #{record.ccontent,jdbcType=VARCHAR},
+      cemail = #{record.cemail,jdbcType=VARCHAR},
+      cphone = #{record.cphone,jdbcType=VARCHAR},
+      redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xa.pojo.Phcomplaints" >
+    update phcomplaints
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="ctype != null" >
+        ctype = #{ctype,jdbcType=VARCHAR},
+      </if>
+      <if test="ctheme != null" >
+        ctheme = #{ctheme,jdbcType=VARCHAR},
+      </if>
+      <if test="ccontent != null" >
+        ccontent = #{ccontent,jdbcType=VARCHAR},
+      </if>
+      <if test="cemail != null" >
+        cemail = #{cemail,jdbcType=VARCHAR},
+      </if>
+      <if test="cphone != null" >
+        cphone = #{cphone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xa.pojo.Phcomplaints" >
+    update phcomplaints
+    set uid = #{uid,jdbcType=INTEGER},
+      ctype = #{ctype,jdbcType=VARCHAR},
+      ctheme = #{ctheme,jdbcType=VARCHAR},
+      ccontent = #{ccontent,jdbcType=VARCHAR},
+      cemail = #{cemail,jdbcType=VARCHAR},
+      cphone = #{cphone,jdbcType=VARCHAR},
+      redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+</mapper>

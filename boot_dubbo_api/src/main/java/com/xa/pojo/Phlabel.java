@@ -2,12 +2,16 @@ package com.xa.pojo;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
-    private Integer uid;
+public class Phlabel implements Serializable {
+    private Integer laid;
 
-    private String uname;
+    private Integer cid;
 
-    private String upassword;
+    private Integer laperformance;
+
+    private Integer laowner;
+
+    private Integer lanewcar;
 
     private String redundancyone;
 
@@ -19,28 +23,44 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getUid() {
-        return uid;
+    public Integer getLaid() {
+        return laid;
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setLaid(Integer laid) {
+        this.laid = laid;
     }
 
-    public String getUname() {
-        return uname;
+    public Integer getCid() {
+        return cid;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname == null ? null : uname.trim();
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
-    public String getUpassword() {
-        return upassword;
+    public Integer getLaperformance() {
+        return laperformance;
     }
 
-    public void setUpassword(String upassword) {
-        this.upassword = upassword == null ? null : upassword.trim();
+    public void setLaperformance(Integer laperformance) {
+        this.laperformance = laperformance;
+    }
+
+    public Integer getLaowner() {
+        return laowner;
+    }
+
+    public void setLaowner(Integer laowner) {
+        this.laowner = laowner;
+    }
+
+    public Integer getLanewcar() {
+        return lanewcar;
+    }
+
+    public void setLanewcar(Integer lanewcar) {
+        this.lanewcar = lanewcar;
     }
 
     public String getRedundancyone() {

@@ -2,12 +2,18 @@ package com.xa.pojo;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class Phappointment implements Serializable {
+    private Integer aid;
+
     private Integer uid;
 
-    private String uname;
+    private Integer cid;
 
-    private String upassword;
+    private String aphone;
+
+    private String aprice;
+
+    private String abargainingphone;
 
     private String redundancyone;
 
@@ -19,6 +25,14 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public Integer getAid() {
+        return aid;
+    }
+
+    public void setAid(Integer aid) {
+        this.aid = aid;
+    }
+
     public Integer getUid() {
         return uid;
     }
@@ -27,20 +41,36 @@ public class User implements Serializable {
         this.uid = uid;
     }
 
-    public String getUname() {
-        return uname;
+    public Integer getCid() {
+        return cid;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname == null ? null : uname.trim();
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
-    public String getUpassword() {
-        return upassword;
+    public String getAphone() {
+        return aphone;
     }
 
-    public void setUpassword(String upassword) {
-        this.upassword = upassword == null ? null : upassword.trim();
+    public void setAphone(String aphone) {
+        this.aphone = aphone == null ? null : aphone.trim();
+    }
+
+    public String getAprice() {
+        return aprice;
+    }
+
+    public void setAprice(String aprice) {
+        this.aprice = aprice == null ? null : aprice.trim();
+    }
+
+    public String getAbargainingphone() {
+        return abargainingphone;
+    }
+
+    public void setAbargainingphone(String abargainingphone) {
+        this.abargainingphone = abargainingphone == null ? null : abargainingphone.trim();
     }
 
     public String getRedundancyone() {

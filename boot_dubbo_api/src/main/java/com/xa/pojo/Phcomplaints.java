@@ -2,12 +2,20 @@ package com.xa.pojo;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class Phcomplaints implements Serializable {
+    private Integer cid;
+
     private Integer uid;
 
-    private String uname;
+    private String ctype;
 
-    private String upassword;
+    private String ctheme;
+
+    private String ccontent;
+
+    private String cemail;
+
+    private String cphone;
 
     private String redundancyone;
 
@@ -19,6 +27,14 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public Integer getCid() {
+        return cid;
+    }
+
+    public void setCid(Integer cid) {
+        this.cid = cid;
+    }
+
     public Integer getUid() {
         return uid;
     }
@@ -27,20 +43,44 @@ public class User implements Serializable {
         this.uid = uid;
     }
 
-    public String getUname() {
-        return uname;
+    public String getCtype() {
+        return ctype;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname == null ? null : uname.trim();
+    public void setCtype(String ctype) {
+        this.ctype = ctype == null ? null : ctype.trim();
     }
 
-    public String getUpassword() {
-        return upassword;
+    public String getCtheme() {
+        return ctheme;
     }
 
-    public void setUpassword(String upassword) {
-        this.upassword = upassword == null ? null : upassword.trim();
+    public void setCtheme(String ctheme) {
+        this.ctheme = ctheme == null ? null : ctheme.trim();
+    }
+
+    public String getCcontent() {
+        return ccontent;
+    }
+
+    public void setCcontent(String ccontent) {
+        this.ccontent = ccontent == null ? null : ccontent.trim();
+    }
+
+    public String getCemail() {
+        return cemail;
+    }
+
+    public void setCemail(String cemail) {
+        this.cemail = cemail == null ? null : cemail.trim();
+    }
+
+    public String getCphone() {
+        return cphone;
+    }
+
+    public void setCphone(String cphone) {
+        this.cphone = cphone == null ? null : cphone.trim();
     }
 
     public String getRedundancyone() {

@@ -2,12 +2,14 @@ package com.xa.pojo;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
-    private Integer uid;
+public class Phodetails implements Serializable {
+    private Integer odid;
 
-    private String uname;
+    private Integer oid;
 
-    private String upassword;
+    private Integer cid;
+
+    private Integer count;
 
     private String redundancyone;
 
@@ -19,28 +21,36 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getUid() {
-        return uid;
+    public Integer getOdid() {
+        return odid;
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setOdid(Integer odid) {
+        this.odid = odid;
     }
 
-    public String getUname() {
-        return uname;
+    public Integer getOid() {
+        return oid;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname == null ? null : uname.trim();
+    public void setOid(Integer oid) {
+        this.oid = oid;
     }
 
-    public String getUpassword() {
-        return upassword;
+    public Integer getCid() {
+        return cid;
     }
 
-    public void setUpassword(String upassword) {
-        this.upassword = upassword == null ? null : upassword.trim();
+    public void setCid(Integer cid) {
+        this.cid = cid;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     public String getRedundancyone() {

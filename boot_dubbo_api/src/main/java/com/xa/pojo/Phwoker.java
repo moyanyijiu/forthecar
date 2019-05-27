@@ -2,12 +2,16 @@ package com.xa.pojo;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
-    private Integer uid;
+public class Phwoker implements Serializable {
+    private Integer wid;
 
-    private String uname;
+    private String wname;
 
-    private String upassword;
+    private String wnumber;
+
+    private String wcareer;
+
+    private String wheadimg;
 
     private String redundancyone;
 
@@ -19,28 +23,44 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getUid() {
-        return uid;
+    public Integer getWid() {
+        return wid;
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setWid(Integer wid) {
+        this.wid = wid;
     }
 
-    public String getUname() {
-        return uname;
+    public String getWname() {
+        return wname;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname == null ? null : uname.trim();
+    public void setWname(String wname) {
+        this.wname = wname == null ? null : wname.trim();
     }
 
-    public String getUpassword() {
-        return upassword;
+    public String getWnumber() {
+        return wnumber;
     }
 
-    public void setUpassword(String upassword) {
-        this.upassword = upassword == null ? null : upassword.trim();
+    public void setWnumber(String wnumber) {
+        this.wnumber = wnumber == null ? null : wnumber.trim();
+    }
+
+    public String getWcareer() {
+        return wcareer;
+    }
+
+    public void setWcareer(String wcareer) {
+        this.wcareer = wcareer == null ? null : wcareer.trim();
+    }
+
+    public String getWheadimg() {
+        return wheadimg;
+    }
+
+    public void setWheadimg(String wheadimg) {
+        this.wheadimg = wheadimg == null ? null : wheadimg.trim();
     }
 
     public String getRedundancyone() {

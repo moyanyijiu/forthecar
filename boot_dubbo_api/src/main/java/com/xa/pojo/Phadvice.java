@@ -2,12 +2,20 @@ package com.xa.pojo;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class Phadvice implements Serializable {
+    private Integer adid;
+
     private Integer uid;
 
-    private String uname;
+    private String adtype;
 
-    private String upassword;
+    private String adtheme;
+
+    private String adcontent;
+
+    private String ademail;
+
+    private String adphone;
 
     private String redundancyone;
 
@@ -19,6 +27,14 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public Integer getAdid() {
+        return adid;
+    }
+
+    public void setAdid(Integer adid) {
+        this.adid = adid;
+    }
+
     public Integer getUid() {
         return uid;
     }
@@ -27,20 +43,44 @@ public class User implements Serializable {
         this.uid = uid;
     }
 
-    public String getUname() {
-        return uname;
+    public String getAdtype() {
+        return adtype;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname == null ? null : uname.trim();
+    public void setAdtype(String adtype) {
+        this.adtype = adtype == null ? null : adtype.trim();
     }
 
-    public String getUpassword() {
-        return upassword;
+    public String getAdtheme() {
+        return adtheme;
     }
 
-    public void setUpassword(String upassword) {
-        this.upassword = upassword == null ? null : upassword.trim();
+    public void setAdtheme(String adtheme) {
+        this.adtheme = adtheme == null ? null : adtheme.trim();
+    }
+
+    public String getAdcontent() {
+        return adcontent;
+    }
+
+    public void setAdcontent(String adcontent) {
+        this.adcontent = adcontent == null ? null : adcontent.trim();
+    }
+
+    public String getAdemail() {
+        return ademail;
+    }
+
+    public void setAdemail(String ademail) {
+        this.ademail = ademail == null ? null : ademail.trim();
+    }
+
+    public String getAdphone() {
+        return adphone;
+    }
+
+    public void setAdphone(String adphone) {
+        this.adphone = adphone == null ? null : adphone.trim();
     }
 
     public String getRedundancyone() {

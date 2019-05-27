@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xa.mapper.PhcarMapper" >
+  <resultMap id="BaseResultMap" type="com.xa.pojo.Phcar" >
+    <id column="cid" property="cid" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="cbrand" property="cbrand" jdbcType="VARCHAR" />
+    <result column="ctype" property="ctype" jdbcType="VARCHAR" />
+    <result column="cmileage" property="cmileage" jdbcType="VARCHAR" />
+    <result column="ctransmission" property="ctransmission" jdbcType="VARCHAR" />
+    <result column="cdisplacement" property="cdisplacement" jdbcType="VARCHAR" />
+    <result column="ccolor" property="ccolor" jdbcType="VARCHAR" />
+    <result column="cbuytime" property="cbuytime" jdbcType="VARCHAR" />
+    <result column="cselltime" property="cselltime" jdbcType="VARCHAR" />
+    <result column="cearthly" property="cearthly" jdbcType="VARCHAR" />
+    <result column="cservice" property="cservice" jdbcType="VARCHAR" />
+    <result column="cqualityimg" property="cqualityimg" jdbcType="VARCHAR" />
+    <result column="cbstime" property="cbstime" jdbcType="INTEGER" />
+    <result column="csore" property="csore" jdbcType="INTEGER" />
+    <result column="cdetailsimg" property="cdetailsimg" jdbcType="VARCHAR" />
+    <result column="cspeedimg" property="cspeedimg" jdbcType="VARCHAR" />
+    <result column="redundancyone" property="redundancyone" jdbcType="VARCHAR" />
+    <result column="redundancytwo" property="redundancytwo" jdbcType="VARCHAR" />
+    <result column="redundancythr" property="redundancythr" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    cid, uid, cbrand, ctype, cmileage, ctransmission, cdisplacement, ccolor, cbuytime, 
+    cselltime, cearthly, cservice, cqualityimg, cbstime, csore, cdetailsimg, cspeedimg, 
+    redundancyone, redundancytwo, redundancythr, status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xa.pojo.PhcarExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from phcar
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from phcar
+    where cid = #{cid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from phcar
+    where cid = #{cid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xa.pojo.PhcarExample" >
+    delete from phcar
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xa.pojo.Phcar" >
+    insert into phcar (cid, uid, cbrand, 
+      ctype, cmileage, ctransmission, 
+      cdisplacement, ccolor, cbuytime, 
+      cselltime, cearthly, cservice, 
+      cqualityimg, cbstime, csore, 
+      cdetailsimg, cspeedimg, redundancyone, 
+      redundancytwo, redundancythr, status
+      )
+    values (#{cid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{cbrand,jdbcType=VARCHAR}, 
+      #{ctype,jdbcType=VARCHAR}, #{cmileage,jdbcType=VARCHAR}, #{ctransmission,jdbcType=VARCHAR}, 
+      #{cdisplacement,jdbcType=VARCHAR}, #{ccolor,jdbcType=VARCHAR}, #{cbuytime,jdbcType=VARCHAR}, 
+      #{cselltime,jdbcType=VARCHAR}, #{cearthly,jdbcType=VARCHAR}, #{cservice,jdbcType=VARCHAR}, 
+      #{cqualityimg,jdbcType=VARCHAR}, #{cbstime,jdbcType=INTEGER}, #{csore,jdbcType=INTEGER}, 
+      #{cdetailsimg,jdbcType=VARCHAR}, #{cspeedimg,jdbcType=VARCHAR}, #{redundancyone,jdbcType=VARCHAR}, 
+      #{redundancytwo,jdbcType=VARCHAR}, #{redundancythr,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xa.pojo.Phcar" >
+    insert into phcar
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="cbrand != null" >
+        cbrand,
+      </if>
+      <if test="ctype != null" >
+        ctype,
+      </if>
+      <if test="cmileage != null" >
+        cmileage,
+      </if>
+      <if test="ctransmission != null" >
+        ctransmission,
+      </if>
+      <if test="cdisplacement != null" >
+        cdisplacement,
+      </if>
+      <if test="ccolor != null" >
+        ccolor,
+      </if>
+      <if test="cbuytime != null" >
+        cbuytime,
+      </if>
+      <if test="cselltime != null" >
+        cselltime,
+      </if>
+      <if test="cearthly != null" >
+        cearthly,
+      </if>
+      <if test="cservice != null" >
+        cservice,
+      </if>
+      <if test="cqualityimg != null" >
+        cqualityimg,
+      </if>
+      <if test="cbstime != null" >
+        cbstime,
+      </if>
+      <if test="csore != null" >
+        csore,
+      </if>
+      <if test="cdetailsimg != null" >
+        cdetailsimg,
+      </if>
+      <if test="cspeedimg != null" >
+        cspeedimg,
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone,
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo,
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="cbrand != null" >
+        #{cbrand,jdbcType=VARCHAR},
+      </if>
+      <if test="ctype != null" >
+        #{ctype,jdbcType=VARCHAR},
+      </if>
+      <if test="cmileage != null" >
+        #{cmileage,jdbcType=VARCHAR},
+      </if>
+      <if test="ctransmission != null" >
+        #{ctransmission,jdbcType=VARCHAR},
+      </if>
+      <if test="cdisplacement != null" >
+        #{cdisplacement,jdbcType=VARCHAR},
+      </if>
+      <if test="ccolor != null" >
+        #{ccolor,jdbcType=VARCHAR},
+      </if>
+      <if test="cbuytime != null" >
+        #{cbuytime,jdbcType=VARCHAR},
+      </if>
+      <if test="cselltime != null" >
+        #{cselltime,jdbcType=VARCHAR},
+      </if>
+      <if test="cearthly != null" >
+        #{cearthly,jdbcType=VARCHAR},
+      </if>
+      <if test="cservice != null" >
+        #{cservice,jdbcType=VARCHAR},
+      </if>
+      <if test="cqualityimg != null" >
+        #{cqualityimg,jdbcType=VARCHAR},
+      </if>
+      <if test="cbstime != null" >
+        #{cbstime,jdbcType=INTEGER},
+      </if>
+      <if test="csore != null" >
+        #{csore,jdbcType=INTEGER},
+      </if>
+      <if test="cdetailsimg != null" >
+        #{cdetailsimg,jdbcType=VARCHAR},
+      </if>
+      <if test="cspeedimg != null" >
+        #{cspeedimg,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xa.pojo.PhcarExample" resultType="java.lang.Integer" >
+    select count(*) from phcar
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update phcar
+    <set >
+      <if test="record.cid != null" >
+        cid = #{record.cid,jdbcType=INTEGER},
+      </if>
+      <if test="record.uid != null" >
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.cbrand != null" >
+        cbrand = #{record.cbrand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ctype != null" >
+        ctype = #{record.ctype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cmileage != null" >
+        cmileage = #{record.cmileage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ctransmission != null" >
+        ctransmission = #{record.ctransmission,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cdisplacement != null" >
+        cdisplacement = #{record.cdisplacement,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ccolor != null" >
+        ccolor = #{record.ccolor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cbuytime != null" >
+        cbuytime = #{record.cbuytime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cselltime != null" >
+        cselltime = #{record.cselltime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cearthly != null" >
+        cearthly = #{record.cearthly,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cservice != null" >
+        cservice = #{record.cservice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cqualityimg != null" >
+        cqualityimg = #{record.cqualityimg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cbstime != null" >
+        cbstime = #{record.cbstime,jdbcType=INTEGER},
+      </if>
+      <if test="record.csore != null" >
+        csore = #{record.csore,jdbcType=INTEGER},
+      </if>
+      <if test="record.cdetailsimg != null" >
+        cdetailsimg = #{record.cdetailsimg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cspeedimg != null" >
+        cspeedimg = #{record.cspeedimg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancyone != null" >
+        redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancytwo != null" >
+        redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancythr != null" >
+        redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update phcar
+    set cid = #{record.cid,jdbcType=INTEGER},
+      uid = #{record.uid,jdbcType=INTEGER},
+      cbrand = #{record.cbrand,jdbcType=VARCHAR},
+      ctype = #{record.ctype,jdbcType=VARCHAR},
+      cmileage = #{record.cmileage,jdbcType=VARCHAR},
+      ctransmission = #{record.ctransmission,jdbcType=VARCHAR},
+      cdisplacement = #{record.cdisplacement,jdbcType=VARCHAR},
+      ccolor = #{record.ccolor,jdbcType=VARCHAR},
+      cbuytime = #{record.cbuytime,jdbcType=VARCHAR},
+      cselltime = #{record.cselltime,jdbcType=VARCHAR},
+      cearthly = #{record.cearthly,jdbcType=VARCHAR},
+      cservice = #{record.cservice,jdbcType=VARCHAR},
+      cqualityimg = #{record.cqualityimg,jdbcType=VARCHAR},
+      cbstime = #{record.cbstime,jdbcType=INTEGER},
+      csore = #{record.csore,jdbcType=INTEGER},
+      cdetailsimg = #{record.cdetailsimg,jdbcType=VARCHAR},
+      cspeedimg = #{record.cspeedimg,jdbcType=VARCHAR},
+      redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xa.pojo.Phcar" >
+    update phcar
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="cbrand != null" >
+        cbrand = #{cbrand,jdbcType=VARCHAR},
+      </if>
+      <if test="ctype != null" >
+        ctype = #{ctype,jdbcType=VARCHAR},
+      </if>
+      <if test="cmileage != null" >
+        cmileage = #{cmileage,jdbcType=VARCHAR},
+      </if>
+      <if test="ctransmission != null" >
+        ctransmission = #{ctransmission,jdbcType=VARCHAR},
+      </if>
+      <if test="cdisplacement != null" >
+        cdisplacement = #{cdisplacement,jdbcType=VARCHAR},
+      </if>
+      <if test="ccolor != null" >
+        ccolor = #{ccolor,jdbcType=VARCHAR},
+      </if>
+      <if test="cbuytime != null" >
+        cbuytime = #{cbuytime,jdbcType=VARCHAR},
+      </if>
+      <if test="cselltime != null" >
+        cselltime = #{cselltime,jdbcType=VARCHAR},
+      </if>
+      <if test="cearthly != null" >
+        cearthly = #{cearthly,jdbcType=VARCHAR},
+      </if>
+      <if test="cservice != null" >
+        cservice = #{cservice,jdbcType=VARCHAR},
+      </if>
+      <if test="cqualityimg != null" >
+        cqualityimg = #{cqualityimg,jdbcType=VARCHAR},
+      </if>
+      <if test="cbstime != null" >
+        cbstime = #{cbstime,jdbcType=INTEGER},
+      </if>
+      <if test="csore != null" >
+        csore = #{csore,jdbcType=INTEGER},
+      </if>
+      <if test="cdetailsimg != null" >
+        cdetailsimg = #{cdetailsimg,jdbcType=VARCHAR},
+      </if>
+      <if test="cspeedimg != null" >
+        cspeedimg = #{cspeedimg,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xa.pojo.Phcar" >
+    update phcar
+    set uid = #{uid,jdbcType=INTEGER},
+      cbrand = #{cbrand,jdbcType=VARCHAR},
+      ctype = #{ctype,jdbcType=VARCHAR},
+      cmileage = #{cmileage,jdbcType=VARCHAR},
+      ctransmission = #{ctransmission,jdbcType=VARCHAR},
+      cdisplacement = #{cdisplacement,jdbcType=VARCHAR},
+      ccolor = #{ccolor,jdbcType=VARCHAR},
+      cbuytime = #{cbuytime,jdbcType=VARCHAR},
+      cselltime = #{cselltime,jdbcType=VARCHAR},
+      cearthly = #{cearthly,jdbcType=VARCHAR},
+      cservice = #{cservice,jdbcType=VARCHAR},
+      cqualityimg = #{cqualityimg,jdbcType=VARCHAR},
+      cbstime = #{cbstime,jdbcType=INTEGER},
+      csore = #{csore,jdbcType=INTEGER},
+      cdetailsimg = #{cdetailsimg,jdbcType=VARCHAR},
+      cspeedimg = #{cspeedimg,jdbcType=VARCHAR},
+      redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+</mapper>
