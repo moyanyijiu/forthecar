@@ -1499,6 +1499,21 @@ $(function(){
  </div>
 </div>
 </body>
+<script>
+ var cid = localStorage.getItem("cid");
+ alert(cid);
+
+ $.ajax({
+     type:"get",
+     url:"getOnePhcar?cid="+cid,
+     success:function (data) {
+         console.log(data);
+     }
+ });
+
+
+</script>
+
 </html>
 
 

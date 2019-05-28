@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html"-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -296,8 +296,8 @@ $(function(){
    <a href="wymc01.html">更多></a>
   </div>
   <div class="blank8"></div>
-  <div class="clys_xx">
-   <ul>
+  <div class="clys_xx" id="zhangshi">
+   <!--<ul>
     <li>
      <a href="mcxqy.html"><img src="images/index.files/ct1.jpg" /></a>
      <p><a href="mcxqy.html">福特-嘉年华 2013款 两厢 1.5L 自动时...</a></p>
@@ -338,7 +338,7 @@ $(function(){
      <p><a href="mcxqy.html">福特-嘉年华 2013款 两厢 1.5L 自动时...</a></p>
      <p><em>5.80万</em>2013年7月/2.20万里</p>
     </li>
-   </ul>
+   </ul>-->
    <div class="clearBoth"></div>
   </div>
   <div class="clearBoth"></div>
@@ -779,7 +779,30 @@ $(function(){
 
         });
     }
+   $.ajax({
+       type:"get",
+       url:"getAllPhcar",
+       success:function (mes) {
+           console.log(mes);
+         $.each(mes,function (index,data) {
+             var  aa = "<ul>\n" +
+                 "<li>\n" +
+                 "<p onclick='mcxqy("+data.cid+")'><a ><img src=\"images/index.files/ct1.jpg\" /></a></p>\n" +
+                 "<p onclick='mcxqy("+data.cid+")'><a />"+data.redundancythr+"...</a></p>\n" +
+                 "<p><em>"+data.cbrand+"</em>"+data.cbuytime +"/"+data.cmileage+"</p>\n" +
+                 "</li>\n" +
+                 "</ul>"
 
+             $("#zhangshi").append(aa);
+         })
+       }
+   });
+
+
+    function mcxqy(id) {
+        localStorage.setItem("cid",id);
+        window.location.href = "mcxqy.html";
+    }
 
 </script>
 

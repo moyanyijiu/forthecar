@@ -22,6 +22,7 @@
 
     <!-- 将接口暴露给消费方 -->
     <dubbo:service interface="com.xa.service.IUserService" ref="userServiceImpl" />
+    <dubbo:service interface="com.xa.service.PhcarService" ref="phcarServiceImpl" />
 
 
 

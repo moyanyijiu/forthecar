@@ -1,2 +1,3 @@
 com\xa\ProviderApplication.class
+com\xa\service\impl\PhcarServiceImpl.class
 com\xa\service\impl\UserServiceImpl.class

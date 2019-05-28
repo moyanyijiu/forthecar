@@ -1,9 +1,9 @@
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/puhaohome
-    username: root
-    password: 131212
+    url: jdbc:mysql://10.12.159.50:3306/puhaocar
+    username: huahua
+    password: 4582425
     driver-class-name: com.mysql.jdbc.Driver
 
 mybatis:

@@ -1,4 +1,5 @@
 com\xa\pojo\PhodetailsExample$Criterion.class
+com\xa\service\PhcarService.class
 com\xa\mapper\UserMapper.class
 com\xa\pojo\Phadvice.class
 com\xa\pojo\PhadviceExample$GeneratedCriteria.class

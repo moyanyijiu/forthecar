@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface PhcarMapper {
+
     int countByExample(PhcarExample example);
 
     int deleteByExample(PhcarExample example);
