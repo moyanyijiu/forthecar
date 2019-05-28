@@ -1,0 +1,49 @@
+@charset "utf-8";
+/*全局样式*/
+
+a {color:#2b2b2b;text-decoration:none;}
+a:hover {color:#ba2636;text-decoration:underline;}
+
+
+/*页面主体盒子*/
+.mainBox{ width:1000px; margin:0 auto; clear:both;}
+.mainBox960{ width:960px; margin:0 auto; clear:both;}
+.mainBox980{ width:980px; margin:0 auto; clear:both;}
+
+
+
+/*迷你导航*/
+.miniNav_box{ height:28px; line-height:28px; border-bottom:1px solid #CBCBCB; background-color:#F6F6F6;}
+.miniNav{ padding:0px 10x; text-align:right;}
+.miniNav div{ line-height:28px; display:inline; padding:0px 5px;}
+
+
+/*主导航*/
+.mainNav_box{ }
+.logo{ width:300px; height:60px; line-height:60px; font-size:36px; font-weight:bold; float:left;}
+.searchBox{ width:500px; height:60px; float:right; padding-right:10px; text-align:right;}
+.search_Text{ height:18px; border:1px solid #CBCBCB;}
+
+.mainNav{height:32px; line-height:32px; text-align:left; padding:0 10px; background-color:#D90301; color:#fff;}
+.mainNav a{color:#FFF; padding:0px 10px; font-size:14px; font-weight:bold;}
+.mainNav a:hover{color:#FF0; text-decoration:none;}
+#riliBox{ float:right;}
+
+/*当前位置*/
+#local{ height:26px; line-height:30px; border:1px solid #DEDEDE; }
+#gk_local{ height:26px; line-height:30px; border:1px solid #DEDEDE; }
+.local_box{height:26px; background:url(../images/common.files/local_index.gif) 4px no-repeat; padding-left:22px;}
+.local_box_noico{ background:none; padding-left:15px;}
+.local_ul li{ line-height:26px; background:url(../images/common.files/local_arrows.gif) right no-repeat; float:left; padding-right:22px;}
+.local_ul li.noLink{ background:none; padding-right:6px;}
+
+
+/*列表翻页*/
+.pageing{ text-align:right; padding-right:10px;}
+.pageing span{ line-height:24px; padding:0 6px;}
+
+
+/*版权*/
+.footNav{ height:28px; line-height:28px; text-align:center; padding:0 10px; background-color:#D90301; color:#fff;}
+.footNav span{color:#FFF; padding:0px 10px;}
+.copyRight{ height:80px;  line-height:24px; text-align:center; padding-top:6px; }

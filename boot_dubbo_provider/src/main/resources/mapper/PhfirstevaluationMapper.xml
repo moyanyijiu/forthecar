@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xa.mapper.PhfirstevaluationMapper" >
+  <resultMap id="BaseResultMap" type="com.xa.pojo.Phfirstevaluation" >
+    <id column="feid" property="feid" jdbcType="INTEGER" />
+    <result column="oid" property="oid" jdbcType="INTEGER" />
+    <result column="fetime" property="fetime" jdbcType="VARCHAR" />
+    <result column="fecontent" property="fecontent" jdbcType="VARCHAR" />
+    <result column="fenum" property="fenum" jdbcType="VARCHAR" />
+    <result column="feimg" property="feimg" jdbcType="VARCHAR" />
+    <result column="redundancyone" property="redundancyone" jdbcType="VARCHAR" />
+    <result column="redundancytwo" property="redundancytwo" jdbcType="VARCHAR" />
+    <result column="redundancythr" property="redundancythr" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    feid, oid, fetime, fecontent, fenum, feimg, redundancyone, redundancytwo, redundancythr, 
+    status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xa.pojo.PhfirstevaluationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from phfirstevaluation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from phfirstevaluation
+    where feid = #{feid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from phfirstevaluation
+    where feid = #{feid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xa.pojo.PhfirstevaluationExample" >
+    delete from phfirstevaluation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xa.pojo.Phfirstevaluation" >
+    insert into phfirstevaluation (feid, oid, fetime, 
+      fecontent, fenum, feimg, 
+      redundancyone, redundancytwo, redundancythr, 
+      status)
+    values (#{feid,jdbcType=INTEGER}, #{oid,jdbcType=INTEGER}, #{fetime,jdbcType=VARCHAR}, 
+      #{fecontent,jdbcType=VARCHAR}, #{fenum,jdbcType=VARCHAR}, #{feimg,jdbcType=VARCHAR}, 
+      #{redundancyone,jdbcType=VARCHAR}, #{redundancytwo,jdbcType=VARCHAR}, #{redundancythr,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xa.pojo.Phfirstevaluation" >
+    insert into phfirstevaluation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="feid != null" >
+        feid,
+      </if>
+      <if test="oid != null" >
+        oid,
+      </if>
+      <if test="fetime != null" >
+        fetime,
+      </if>
+      <if test="fecontent != null" >
+        fecontent,
+      </if>
+      <if test="fenum != null" >
+        fenum,
+      </if>
+      <if test="feimg != null" >
+        feimg,
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone,
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo,
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="feid != null" >
+        #{feid,jdbcType=INTEGER},
+      </if>
+      <if test="oid != null" >
+        #{oid,jdbcType=INTEGER},
+      </if>
+      <if test="fetime != null" >
+        #{fetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fecontent != null" >
+        #{fecontent,jdbcType=VARCHAR},
+      </if>
+      <if test="fenum != null" >
+        #{fenum,jdbcType=VARCHAR},
+      </if>
+      <if test="feimg != null" >
+        #{feimg,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xa.pojo.PhfirstevaluationExample" resultType="java.lang.Integer" >
+    select count(*) from phfirstevaluation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update phfirstevaluation
+    <set >
+      <if test="record.feid != null" >
+        feid = #{record.feid,jdbcType=INTEGER},
+      </if>
+      <if test="record.oid != null" >
+        oid = #{record.oid,jdbcType=INTEGER},
+      </if>
+      <if test="record.fetime != null" >
+        fetime = #{record.fetime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fecontent != null" >
+        fecontent = #{record.fecontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fenum != null" >
+        fenum = #{record.fenum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.feimg != null" >
+        feimg = #{record.feimg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancyone != null" >
+        redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancytwo != null" >
+        redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancythr != null" >
+        redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update phfirstevaluation
+    set feid = #{record.feid,jdbcType=INTEGER},
+      oid = #{record.oid,jdbcType=INTEGER},
+      fetime = #{record.fetime,jdbcType=VARCHAR},
+      fecontent = #{record.fecontent,jdbcType=VARCHAR},
+      fenum = #{record.fenum,jdbcType=VARCHAR},
+      feimg = #{record.feimg,jdbcType=VARCHAR},
+      redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xa.pojo.Phfirstevaluation" >
+    update phfirstevaluation
+    <set >
+      <if test="oid != null" >
+        oid = #{oid,jdbcType=INTEGER},
+      </if>
+      <if test="fetime != null" >
+        fetime = #{fetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fecontent != null" >
+        fecontent = #{fecontent,jdbcType=VARCHAR},
+      </if>
+      <if test="fenum != null" >
+        fenum = #{fenum,jdbcType=VARCHAR},
+      </if>
+      <if test="feimg != null" >
+        feimg = #{feimg,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where feid = #{feid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xa.pojo.Phfirstevaluation" >
+    update phfirstevaluation
+    set oid = #{oid,jdbcType=INTEGER},
+      fetime = #{fetime,jdbcType=VARCHAR},
+      fecontent = #{fecontent,jdbcType=VARCHAR},
+      fenum = #{fenum,jdbcType=VARCHAR},
+      feimg = #{feimg,jdbcType=VARCHAR},
+      redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where feid = #{feid,jdbcType=INTEGER}
+  </update>
+</mapper>

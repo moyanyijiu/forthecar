@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xa.mapper.PhwokerMapper" >
+  <resultMap id="BaseResultMap" type="com.xa.pojo.Phwoker" >
+    <id column="wid" property="wid" jdbcType="INTEGER" />
+    <result column="wname" property="wname" jdbcType="VARCHAR" />
+    <result column="wnumber" property="wnumber" jdbcType="VARCHAR" />
+    <result column="wcareer" property="wcareer" jdbcType="VARCHAR" />
+    <result column="wheadimg" property="wheadimg" jdbcType="VARCHAR" />
+    <result column="redundancyone" property="redundancyone" jdbcType="VARCHAR" />
+    <result column="redundancytwo" property="redundancytwo" jdbcType="VARCHAR" />
+    <result column="redundancythr" property="redundancythr" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    wid, wname, wnumber, wcareer, wheadimg, redundancyone, redundancytwo, redundancythr, 
+    status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xa.pojo.PhwokerExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from phwoker
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from phwoker
+    where wid = #{wid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from phwoker
+    where wid = #{wid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xa.pojo.PhwokerExample" >
+    delete from phwoker
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xa.pojo.Phwoker" >
+    insert into phwoker (wid, wname, wnumber, 
+      wcareer, wheadimg, redundancyone, 
+      redundancytwo, redundancythr, status
+      )
+    values (#{wid,jdbcType=INTEGER}, #{wname,jdbcType=VARCHAR}, #{wnumber,jdbcType=VARCHAR}, 
+      #{wcareer,jdbcType=VARCHAR}, #{wheadimg,jdbcType=VARCHAR}, #{redundancyone,jdbcType=VARCHAR}, 
+      #{redundancytwo,jdbcType=VARCHAR}, #{redundancythr,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xa.pojo.Phwoker" >
+    insert into phwoker
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="wid != null" >
+        wid,
+      </if>
+      <if test="wname != null" >
+        wname,
+      </if>
+      <if test="wnumber != null" >
+        wnumber,
+      </if>
+      <if test="wcareer != null" >
+        wcareer,
+      </if>
+      <if test="wheadimg != null" >
+        wheadimg,
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone,
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo,
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="wid != null" >
+        #{wid,jdbcType=INTEGER},
+      </if>
+      <if test="wname != null" >
+        #{wname,jdbcType=VARCHAR},
+      </if>
+      <if test="wnumber != null" >
+        #{wnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="wcareer != null" >
+        #{wcareer,jdbcType=VARCHAR},
+      </if>
+      <if test="wheadimg != null" >
+        #{wheadimg,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xa.pojo.PhwokerExample" resultType="java.lang.Integer" >
+    select count(*) from phwoker
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update phwoker
+    <set >
+      <if test="record.wid != null" >
+        wid = #{record.wid,jdbcType=INTEGER},
+      </if>
+      <if test="record.wname != null" >
+        wname = #{record.wname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wnumber != null" >
+        wnumber = #{record.wnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wcareer != null" >
+        wcareer = #{record.wcareer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wheadimg != null" >
+        wheadimg = #{record.wheadimg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancyone != null" >
+        redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancytwo != null" >
+        redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancythr != null" >
+        redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update phwoker
+    set wid = #{record.wid,jdbcType=INTEGER},
+      wname = #{record.wname,jdbcType=VARCHAR},
+      wnumber = #{record.wnumber,jdbcType=VARCHAR},
+      wcareer = #{record.wcareer,jdbcType=VARCHAR},
+      wheadimg = #{record.wheadimg,jdbcType=VARCHAR},
+      redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xa.pojo.Phwoker" >
+    update phwoker
+    <set >
+      <if test="wname != null" >
+        wname = #{wname,jdbcType=VARCHAR},
+      </if>
+      <if test="wnumber != null" >
+        wnumber = #{wnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="wcareer != null" >
+        wcareer = #{wcareer,jdbcType=VARCHAR},
+      </if>
+      <if test="wheadimg != null" >
+        wheadimg = #{wheadimg,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where wid = #{wid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xa.pojo.Phwoker" >
+    update phwoker
+    set wname = #{wname,jdbcType=VARCHAR},
+      wnumber = #{wnumber,jdbcType=VARCHAR},
+      wcareer = #{wcareer,jdbcType=VARCHAR},
+      wheadimg = #{wheadimg,jdbcType=VARCHAR},
+      redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where wid = #{wid,jdbcType=INTEGER}
+  </update>
+</mapper>

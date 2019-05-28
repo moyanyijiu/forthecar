@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xa.mapper.PhappointmentMapper" >
+  <resultMap id="BaseResultMap" type="com.xa.pojo.Phappointment" >
+    <id column="aid" property="aid" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="cid" property="cid" jdbcType="INTEGER" />
+    <result column="aphone" property="aphone" jdbcType="VARCHAR" />
+    <result column="aprice" property="aprice" jdbcType="VARCHAR" />
+    <result column="abargainingphone" property="abargainingphone" jdbcType="VARCHAR" />
+    <result column="redundancyone" property="redundancyone" jdbcType="VARCHAR" />
+    <result column="redundancytwo" property="redundancytwo" jdbcType="VARCHAR" />
+    <result column="redundancythr" property="redundancythr" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    aid, uid, cid, aphone, aprice, abargainingphone, redundancyone, redundancytwo, redundancythr, 
+    status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xa.pojo.PhappointmentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from phappointment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from phappointment
+    where aid = #{aid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from phappointment
+    where aid = #{aid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xa.pojo.PhappointmentExample" >
+    delete from phappointment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xa.pojo.Phappointment" >
+    insert into phappointment (aid, uid, cid, 
+      aphone, aprice, abargainingphone, 
+      redundancyone, redundancytwo, redundancythr, 
+      status)
+    values (#{aid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER}, 
+      #{aphone,jdbcType=VARCHAR}, #{aprice,jdbcType=VARCHAR}, #{abargainingphone,jdbcType=VARCHAR}, 
+      #{redundancyone,jdbcType=VARCHAR}, #{redundancytwo,jdbcType=VARCHAR}, #{redundancythr,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xa.pojo.Phappointment" >
+    insert into phappointment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="aid != null" >
+        aid,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="aphone != null" >
+        aphone,
+      </if>
+      <if test="aprice != null" >
+        aprice,
+      </if>
+      <if test="abargainingphone != null" >
+        abargainingphone,
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone,
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo,
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="aid != null" >
+        #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="cid != null" >
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="aphone != null" >
+        #{aphone,jdbcType=VARCHAR},
+      </if>
+      <if test="aprice != null" >
+        #{aprice,jdbcType=VARCHAR},
+      </if>
+      <if test="abargainingphone != null" >
+        #{abargainingphone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xa.pojo.PhappointmentExample" resultType="java.lang.Integer" >
+    select count(*) from phappointment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update phappointment
+    <set >
+      <if test="record.aid != null" >
+        aid = #{record.aid,jdbcType=INTEGER},
+      </if>
+      <if test="record.uid != null" >
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.cid != null" >
+        cid = #{record.cid,jdbcType=INTEGER},
+      </if>
+      <if test="record.aphone != null" >
+        aphone = #{record.aphone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.aprice != null" >
+        aprice = #{record.aprice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.abargainingphone != null" >
+        abargainingphone = #{record.abargainingphone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancyone != null" >
+        redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancytwo != null" >
+        redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancythr != null" >
+        redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update phappointment
+    set aid = #{record.aid,jdbcType=INTEGER},
+      uid = #{record.uid,jdbcType=INTEGER},
+      cid = #{record.cid,jdbcType=INTEGER},
+      aphone = #{record.aphone,jdbcType=VARCHAR},
+      aprice = #{record.aprice,jdbcType=VARCHAR},
+      abargainingphone = #{record.abargainingphone,jdbcType=VARCHAR},
+      redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xa.pojo.Phappointment" >
+    update phappointment
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="cid != null" >
+        cid = #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="aphone != null" >
+        aphone = #{aphone,jdbcType=VARCHAR},
+      </if>
+      <if test="aprice != null" >
+        aprice = #{aprice,jdbcType=VARCHAR},
+      </if>
+      <if test="abargainingphone != null" >
+        abargainingphone = #{abargainingphone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where aid = #{aid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xa.pojo.Phappointment" >
+    update phappointment
+    set uid = #{uid,jdbcType=INTEGER},
+      cid = #{cid,jdbcType=INTEGER},
+      aphone = #{aphone,jdbcType=VARCHAR},
+      aprice = #{aprice,jdbcType=VARCHAR},
+      abargainingphone = #{abargainingphone,jdbcType=VARCHAR},
+      redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where aid = #{aid,jdbcType=INTEGER}
+  </update>
+</mapper>

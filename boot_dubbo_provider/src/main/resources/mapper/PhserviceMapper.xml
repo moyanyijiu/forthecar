@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xa.mapper.PhserviceMapper" >
+  <resultMap id="BaseResultMap" type="com.xa.pojo.Phservice" >
+    <id column="sid" property="sid" jdbcType="INTEGER" />
+    <result column="cid" property="cid" jdbcType="INTEGER" />
+    <result column="sassurance" property="sassurance" jdbcType="VARCHAR" />
+    <result column="stransfer" property="stransfer" jdbcType="VARCHAR" />
+    <result column="scondition" property="scondition" jdbcType="VARCHAR" />
+    <result column="sreturn" property="sreturn" jdbcType="VARCHAR" />
+    <result column="redundancyone" property="redundancyone" jdbcType="VARCHAR" />
+    <result column="redundancytwo" property="redundancytwo" jdbcType="VARCHAR" />
+    <result column="redundancythr" property="redundancythr" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    sid, cid, sassurance, stransfer, scondition, sreturn, redundancyone, redundancytwo, 
+    redundancythr, status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xa.pojo.PhserviceExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from phservice
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from phservice
+    where sid = #{sid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from phservice
+    where sid = #{sid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xa.pojo.PhserviceExample" >
+    delete from phservice
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xa.pojo.Phservice" >
+    insert into phservice (sid, cid, sassurance, 
+      stransfer, scondition, sreturn, 
+      redundancyone, redundancytwo, redundancythr, 
+      status)
+    values (#{sid,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER}, #{sassurance,jdbcType=VARCHAR}, 
+      #{stransfer,jdbcType=VARCHAR}, #{scondition,jdbcType=VARCHAR}, #{sreturn,jdbcType=VARCHAR}, 
+      #{redundancyone,jdbcType=VARCHAR}, #{redundancytwo,jdbcType=VARCHAR}, #{redundancythr,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xa.pojo.Phservice" >
+    insert into phservice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sid != null" >
+        sid,
+      </if>
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="sassurance != null" >
+        sassurance,
+      </if>
+      <if test="stransfer != null" >
+        stransfer,
+      </if>
+      <if test="scondition != null" >
+        scondition,
+      </if>
+      <if test="sreturn != null" >
+        sreturn,
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone,
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo,
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sid != null" >
+        #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="cid != null" >
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="sassurance != null" >
+        #{sassurance,jdbcType=VARCHAR},
+      </if>
+      <if test="stransfer != null" >
+        #{stransfer,jdbcType=VARCHAR},
+      </if>
+      <if test="scondition != null" >
+        #{scondition,jdbcType=VARCHAR},
+      </if>
+      <if test="sreturn != null" >
+        #{sreturn,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xa.pojo.PhserviceExample" resultType="java.lang.Integer" >
+    select count(*) from phservice
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update phservice
+    <set >
+      <if test="record.sid != null" >
+        sid = #{record.sid,jdbcType=INTEGER},
+      </if>
+      <if test="record.cid != null" >
+        cid = #{record.cid,jdbcType=INTEGER},
+      </if>
+      <if test="record.sassurance != null" >
+        sassurance = #{record.sassurance,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stransfer != null" >
+        stransfer = #{record.stransfer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.scondition != null" >
+        scondition = #{record.scondition,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sreturn != null" >
+        sreturn = #{record.sreturn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancyone != null" >
+        redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancytwo != null" >
+        redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.redundancythr != null" >
+        redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update phservice
+    set sid = #{record.sid,jdbcType=INTEGER},
+      cid = #{record.cid,jdbcType=INTEGER},
+      sassurance = #{record.sassurance,jdbcType=VARCHAR},
+      stransfer = #{record.stransfer,jdbcType=VARCHAR},
+      scondition = #{record.scondition,jdbcType=VARCHAR},
+      sreturn = #{record.sreturn,jdbcType=VARCHAR},
+      redundancyone = #{record.redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{record.redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{record.redundancythr,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xa.pojo.Phservice" >
+    update phservice
+    <set >
+      <if test="cid != null" >
+        cid = #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="sassurance != null" >
+        sassurance = #{sassurance,jdbcType=VARCHAR},
+      </if>
+      <if test="stransfer != null" >
+        stransfer = #{stransfer,jdbcType=VARCHAR},
+      </if>
+      <if test="scondition != null" >
+        scondition = #{scondition,jdbcType=VARCHAR},
+      </if>
+      <if test="sreturn != null" >
+        sreturn = #{sreturn,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancyone != null" >
+        redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancytwo != null" >
+        redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      </if>
+      <if test="redundancythr != null" >
+        redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sid = #{sid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xa.pojo.Phservice" >
+    update phservice
+    set cid = #{cid,jdbcType=INTEGER},
+      sassurance = #{sassurance,jdbcType=VARCHAR},
+      stransfer = #{stransfer,jdbcType=VARCHAR},
+      scondition = #{scondition,jdbcType=VARCHAR},
+      sreturn = #{sreturn,jdbcType=VARCHAR},
+      redundancyone = #{redundancyone,jdbcType=VARCHAR},
+      redundancytwo = #{redundancytwo,jdbcType=VARCHAR},
+      redundancythr = #{redundancythr,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where sid = #{sid,jdbcType=INTEGER}
+  </update>
+</mapper>
