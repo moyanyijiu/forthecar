@@ -9,6 +9,8 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface UserMapper {
+    User getOneUser(User user);
+
     int countByExample(UserExample example);
 
     int deleteByExample(UserExample example);

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- shiro在spring中配置的核心, id必须叫shiroFilter-->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"></property>
+        <property name="loginUrl" value="/login.html" />
+        <property name="filterChainDefinitions">
+            <value>
+                /index.html=anon
+                /about.html=authc
+                <!--/about.html=anon
+                /product.html=anon
+                /proinfo=authc
+                /user.html=authc
+                /order.html=authc
+                /message.html=authc
+                /set.html=authc-->
+            </value>
+        </property>
+    </bean>
+
+    <!-- 自定义的Realm -->
+    <bean id="myRealm" class="com.xa.realm.MyRealm"></bean>
+
+    <!-- 使用DefaultSecurityManager来创建SecurityManager对象 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="myRealm"></property>
+    </bean>
+
+    <!-- 将realm交给Spring管理 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"></bean>
+</beans>

@@ -3,8 +3,10 @@ package com.xa.mapper;
 import com.xa.pojo.Phcar;
 import com.xa.pojo.PhcarExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface PhcarMapper {
     int countByExample(PhcarExample example);
 

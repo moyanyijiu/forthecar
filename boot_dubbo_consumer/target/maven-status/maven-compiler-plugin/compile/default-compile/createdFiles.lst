@@ -1,2 +1,3 @@
 com\xa\controller\UserController.class
+com\xa\realm\MyRealm.class
 com\xa\ConsumerApplication.class

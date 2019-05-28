@@ -10,6 +10,12 @@
     <result column="redundancythr" property="redundancythr" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
   </resultMap>
+
+  <select id="getOneUser" parameterType="User" resultType="User">
+    select * from user where uname=#{uname} and upassword=#{upassword}
+  </select>
+
+
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

@@ -11,11 +11,18 @@
     <dubbo:application name="provider"/>
 
     <!-- 完成dubbo的注册 -->
-    <dubbo:registry address="zookeeper://10.12.159.126:2181" />
+    <!--<dubbo:registry address="zookeeper://10.12.159.126:2181" />-->
+    <dubbo:registry address="zookeeper://192.168.6.128:2181" />
+    <!--后波涛的zookpeer-->
+   <!-- <dubbo:registry address="zookeeper://10.12.159.126:2181" />-->
+
 
     <!-- 配置Dubbo协议,dubbo, RMI, hession -->
     <dubbo:protocol name="dubbo" port="20880" />
 
     <!-- 将接口暴露给消费方 -->
     <dubbo:service interface="com.xa.service.IUserService" ref="userServiceImpl" />
+
+
+
 </beans>
