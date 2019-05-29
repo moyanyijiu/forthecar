@@ -350,4 +350,35 @@
       status = #{status,jdbcType=VARCHAR}
     where feid = #{feid,jdbcType=INTEGER}
   </update>
+  <!--查出所有的评论-->
+  <select id="getAllPingLun" resultType="com.xa.dto.PersonnelevaluationDto">
+     select f.feid,car.cqualityimg,car.redundancyone,f.fetime,f.fecontent,user.uname
+      from phfirstevaluation f,phcar car,phorder o,user
+      where f.oid=o.oid and o.uid=user.uid and car.uid=user.uid and f.status=0;
+  </select>
+  <!--删除评论-->
+  <delete id="delPinglunById" parameterType="int">
+    update phfirstevaluation
+    set status=1
+    where feid=#{id}
+  </delete>
+  <!--//删除追加评论-->
+  <delete id="delAddPinglun" parameterType="int">
+    update phaddevaluation
+    set status=1
+    where feid=#{id}
+  </delete>
+  <!--//查出我的评论-->
+  <select id="getAllPingLunByUser" parameterType="int" resultType="com.xa.dto.PersonnelevaluationDto">
+      select f.feid,car.cqualityimg,car.redundancyone,f.fetime,f.fecontent,user.uname
+      from phfirstevaluation f,phcar car,phorder o,user
+      where f.oid=o.oid and o.uid=user.uid and car.uid=user.uid and f.status=0 and user.uid=#{uid};
+  </select>
+
+  <!--根据用户查出追加的评论-->
+  <select id="getAddvaluationByUid" parameterType="int" resultType="phaddevaluation">
+    select aeid,aefeel,aeservice,o.onumber redundancytwo,car.redundancyone
+      from phfirstevaluation f,phcar car,phorder o,user,Phaddevaluation adde
+      where adde.feid=f.feid and f.oid=o.oid and o.uid=user.uid and car.uid=user.uid and adde.status=0 and user.uid=#{uid};
+  </select>
 </mapper>

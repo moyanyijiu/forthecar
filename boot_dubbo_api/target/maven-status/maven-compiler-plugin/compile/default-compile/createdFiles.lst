@@ -40,6 +40,7 @@ com\xa\pojo\PhserviceExample$Criterion.class
 com\xa\pojo\Phappointment.class
 com\xa\pojo\PhserviceExample$GeneratedCriteria.class
 com\xa\mapper\PhpersonnelevaluationMapper.class
+com\xa\service\PersonnelevaluationService.class
 com\xa\pojo\PhshopcarExample$Criteria.class
 com\xa\pojo\Phservice.class
 com\xa\mapper\PhaddevaluationMapper.class
@@ -47,6 +48,7 @@ com\xa\mapper\PhserviceMapper.class
 com\xa\pojo\PhappointmentExample$GeneratedCriteria.class
 com\xa\mapper\PhshopcarMapper.class
 com\xa\pojo\Phlabel.class
+com\xa\dto\PersonnelevaluationDto.class
 com\xa\pojo\Phuserinfo.class
 com\xa\mapper\IUserMapper.class
 com\xa\pojo\PhaddevaluationExample$GeneratedCriteria.class

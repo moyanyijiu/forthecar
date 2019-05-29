@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -131,8 +131,8 @@ $("#fullbg,#dialog").hide();
   <div class="about">
    <div class="about_left">
     <ul>
-     <li><a href="jypj.html">卖家评价</a></li>
-     <li class="hover"><a href="jypj01.html">买家评价</a></li>
+     <li ><a href="jypj.html">所有评价</a></li>
+     <li class="hover"><a href="jypj01.html">我的评价</a></li>
     </ul>
     <div class="clearBoth"></div>
    </div>
@@ -143,29 +143,12 @@ $("#fullbg,#dialog").hide();
        <li id="two2"  onclick="setTab('two',2,2)">追加评价</li>
       </ul>
      </div>
-     <div class="blank12"></div>
-     <div class="jypj_ck">
-      <table>
-       <tbody>
-        <tr>
-         <td>
-          <label>按交易时间：</label>
-          <select>
-           <option>2015-05-04</option>
-          </select>
-         </td>
-          <td>
-          <label>用户名：</label>
-          <select>
-           <option>2015-05-04</option>
-          </select>
-         </td>
-         <td><input type="submit"  value=""/></td>
-        </tr>
-       </tbody>
-      </table>
+     <div class="blank12" >
      </div>
-     <div class="blank6"></div>
+     <div class="blank6">
+
+
+     </div>
      <div class="pl_list" id="con_two_1">
       <table>
        <thead>
@@ -177,7 +160,7 @@ $("#fullbg,#dialog").hide();
         <th style="text-align:center;">操作</th>
        </tr>
        </thead>
-       <tbody>
+       <tbody id="tbody">
         <tr>
          <td>
           <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
@@ -188,96 +171,7 @@ $("#fullbg,#dialog").hide();
          <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
          <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
         </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
+
        </tbody>
       </table>
       <div class="clearBoth"></div>
@@ -286,114 +180,15 @@ $("#fullbg,#dialog").hide();
       <table>
        <thead>
        <tr>
-        <th>商品名称</th>
-        <th style="text-align:center;">评价时间</th>
-        <th>评价内容</th>
-        <th style="text-align:center;">评价人</th>
+        <th>订单编号</th>
+        <th style="text-align:center;">车名</th>
+        <th>使用感受</th>
+        <th style="text-align:center;">售后服务</th>
         <th style="text-align:center;">操作</th>
        </tr>
        </thead>
-       <tbody>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
-        <tr>
-         <td>
-          <div class="pj_img"><img src="images/common.files/cs.jpg" /></div>
-          <div class="pj_sp">长城汽车-哈弗H3 2010款 领先版 2.4LMT 两驱豪华型</div>
-         </td>
-         <td style="width:140px; text-align:center;">2015-06-05</td>
-         <td style="width:300px;">好买家!~感谢您对我们的支持!祝您每天都能拥有阳光般的好心情~~~ 服务不好的地方还希望亲多原谅 相信我们一直都在努力！~ 期</td>
-         <td style="width:140px; text-align:center;">卖家：迈杰云 </td>
-         <td style="width:80px; text-align:center;"><a href="#">删除评论</a></td>
-        </tr>
+       <tbody id="tbody1">
+
        </tbody>
       </table>
       <div class="clearBoth"></div>
@@ -620,6 +415,64 @@ $("#fullbg,#dialog").hide();
   <div class="clearBoth"></div>
  </div>
 </div>
+<script >
+ $.ajax({
+  type:"get",
+  url:"getAllPingLunByUser",
+  dataType:"json",
+  success:function (data) {
+   $.each(data,function (index,element) {
+    var jr=" <tr>\n" +
+            "<td>\n" +
+            "<div class='pj_img'><img width=\"68\" height=\"46\" src=\"images/common.files/"+element.cqualityimg.split("-")[0]+"\" /></div>\n" +
+            "<div class=\"pj_sp\">"+element.redundancyone+"</div>\n" +
+            "</td>\n" +
+            "<td style=\"width:140px; text-align:center;\">"+element.fetime+"</td>\n" +
+            "<td style=\"width:300px;\">"+element.fecontent+"</td>\n" +
+            "<td style=\"width:140px; text-align:center;\">"+element.uname+"</td>\n" +
+            "<td style=\"width:80px; text-align:center;\"><a onclick='del("+element.feid+")' >删除评论</a></td>\n" +
+            "</tr>";
+    $("#tbody").append(jr)
+   })
+
+
+  }
+ })
+ function del(id) {
+  if (confirm("是否删除？")) {
+   location.href="delPinglun/" + id
+  }
+ }
+
+ $.ajax({
+  type: "get",
+  url: "getAddvaluationByUid",
+  dataType: "json",
+  success: function (data) {
+   $.each(data, function (index, element) {
+    var jr1 = "<tr>\n" +
+            "<td>\n" +
+            "<div class=\"pj_sp\">" + element.redundancytwo + "</div>\n" +
+            "</td>\n" +
+            "<td style=\"width:140px; text-align:center;\">" + element.redundancyone + "</td>\n" +
+            "<td style=\"width:300px;\">" + element.aefeel + "</td>\n" +
+            "<td style=\"width:140px; text-align:center;\">" + element.aeservice + " </td>\n" +
+            "<td style=\"width:80px; text-align:center;\"><a onclick='del2(" + element.aeid + ")' >删除评论</a></td>\n" +
+            "</tr>"
+
+    $("#tbody1").append(jr1)
+   })
+  }
+ })
+
+
+ function del2(id) {
+  if (confirm("是否删除？")) {
+   location.href="delAddPinglun/" + id
+  }
+ }
+
+</script>
 </body>
 </html>
 
