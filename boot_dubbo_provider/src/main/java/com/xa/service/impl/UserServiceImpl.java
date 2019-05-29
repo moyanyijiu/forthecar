@@ -17,4 +17,9 @@ public class UserServiceImpl implements IUserService {
     public List<User> getAllUser() {
         return iUserMapper.selectByExample(null);
     }
+
+    @Override
+    public User getOneUser(User user) {
+        return iUserMapper.getOneUser(user);
+    }
 }

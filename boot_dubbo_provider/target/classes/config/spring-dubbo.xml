@@ -10,13 +10,17 @@
     <!-- 定义服务提供者在Dubbo中的名称 -->
     <dubbo:application name="provider"/>
 
-    <!-- 完成dubbo的注册 -->
-    <dubbo:registry address="zookeeper://10.12.159.126:2181"/>
+    <!-- 完成dubbo的注册 --><!--192.168.6.128 小刚--><!--10.12.159.126 何-->
+    <dubbo:registry address="zookeeper://10.12.159.126:2181" />
 
     <!-- 配置Dubbo协议,dubbo, RMI, hession -->
-    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:protocol name="dubbo" port="20882" />
 
     <!-- 将接口暴露给消费方 -->
     <dubbo:service interface="com.xa.service.IUserService" ref="userServiceImpl" />
     <dubbo:service interface="com.xa.service.PersonnelevaluationService" ref="personnelevaluationImpl" />
+    <dubbo:service interface="com.xa.service.PhcarService" ref="phcarServiceImpl" />
+
+
+
 </beans>
