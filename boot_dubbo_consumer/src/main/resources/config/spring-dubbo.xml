@@ -11,7 +11,7 @@
     <dubbo:application name="consumer"/>
 
     <!-- 配置注册中心 -->
-    <dubbo:registry address="zookeeper://192.168.74.129:2181" />
+    <dubbo:registry address="zookeeper://10.12.159.126:2181"/>
 
     <!-- 获取提供方所提供的数据 -->
     <dubbo:reference interface="com.xa.service.IUserService" id="iuserService"></dubbo:reference>

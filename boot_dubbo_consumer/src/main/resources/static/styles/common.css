@@ -8,7 +8,7 @@
 .zxcs select{ width:60px; height:24px;}
 .bzsm{ float:right; width:460px; height:25px; padding:41px 0px;}
 .bzsm ul li{ float:left; background:url(../images/index.files/ctsli.png) no-repeat; padding:0px 22px; line-height:25px; font-size:14px; font-family:"微软雅黑"; color:#FFF;}
-.topright{ float:right; width:400px; height:108px;}
+.topright{ float:right; width:403px; height:108px;}
 .searchbox{ float:left; width:310px; height:36px; padding-top:36px;}
 .searchbox tr td input.sstx{ width:253px; height:34px; border:1px solid #cccccc; float:left; line-height:34PX; color:#999999;}
 .searchbox tr td input.sstj{ width:32px; height:36px; border:1px solid #cccccc; border-left:0 none; background:url(../images/index.files/ss.jpg) center center no-repeat; float:right; cursor:pointer; }
